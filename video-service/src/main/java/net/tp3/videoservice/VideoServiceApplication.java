@@ -28,21 +28,31 @@ public class VideoServiceApplication {
     CommandLineRunner start() {
         return args -> {
 
-            List<Creator> creators = List.of(Creator.builder().name("x").email("Te@gmail.com")
-                    .build());
+            List<Creator> creators = List.of(
+                    Creator.builder().name("T").email("Te@gmail.com").build(),
+                    Creator.builder().name("b").email("Be@gmail.com").build()
+            );
             creatorRepository.saveAll(creators);
 
-            List<Video> videos = List.of(Video.builder()
-                    .name("AYOUB EL KAABI - \uD83C\uDDF2\uD83C\uDDE6⚽\uFE0F قصة كفاح البطل أيوب الكعبي")
-                    .url("https://www.youtube.com")
-                    .description("Follow me on instagram : tahaessou")
-                    .datePublication("28/09/2002")
-                    .creator(creators.get(0))
+            List<Video> videos = List.of(
+                    Video.builder()
+                            .name("Vd 1")
+                            .url("https://www.youtube.com/Video 1")
+                            .description("Video 1")
+                            .datePublication("28/09/2023")
+                            .creator(creators.get(0))
+                            .build(),
+
+                    Video.builder()
+                            .name("Vd 1")
+                            .url("https://www.youtube.com/Video 2")
+                            .description("Video 2")
+                            .datePublication("16/10/2022")
+                            .creator(creators.get(1))
                             .build());
 
             videoRepository.saveAll(videos);
-};
+        };
     }
-
 }
 
