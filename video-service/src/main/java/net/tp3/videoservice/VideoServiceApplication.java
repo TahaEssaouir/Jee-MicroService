@@ -39,12 +39,12 @@ public class VideoServiceApplication {
                             .name("Vd 1")
                             .url("https://www.youtube.com/Video 1")
                             .description("Video 1")
-                            .datePublication("28/09/2023")
+                            .datePublication("25/09/2023")
                             .creator(creators.get(0))
                             .build(),
 
                     Video.builder()
-                            .name("Vd 1")
+                            .name("Vd 2")
                             .url("https://www.youtube.com/Video 2")
                             .description("Video 2")
                             .datePublication("16/10/2022")
