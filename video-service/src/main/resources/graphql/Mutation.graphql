@@ -1,6 +1,7 @@
 type Mutation{
-    saveVideo(video: VideoRequest): Video
-    saveCreator(creator: CreatorRequest): Creator
+
+    saveVideo(videoRequest: VideoRequestt): Video
+    saveCreator(CreatorRequest: CreatorRequest): Creator
 
 }
 

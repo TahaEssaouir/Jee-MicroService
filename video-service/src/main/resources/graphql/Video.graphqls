@@ -7,7 +7,7 @@ type Video {
     creator : Creator
 }
 
-input VideoRequest{
+input VideoRequestt{
     name : String,
     url : String,
     description : String,

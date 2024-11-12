@@ -4,13 +4,14 @@ import net.tp3.videoservice.Dao.entities.Creator;
 import net.tp3.videoservice.Dao.entities.Video;
 import net.tp3.videoservice.Dao.repository.CreatorRepository;
 import net.tp3.videoservice.Dao.repository.VideoRepository;
+import net.tp3.videoservice.dto.CreatorRequest;
 import net.tp3.videoservice.dto.VideoRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class MutationResolver {
 
     @Autowired
@@ -42,5 +43,16 @@ public class MutationResolver {
                 .build();
 
         return videoRepository.save(newVideo);
+    }
+    @MutationMapping
+    public Creator saveCreator(@Argument CreatorRequest creatorRequest) {
+        // Convert CreatorRequest to Creator entity
+        Creator creator = Creator.builder()
+                .name(creatorRequest.getName())
+                .email(creatorRequest.getEmail())
+                .build();
+
+        // Save the creator to the repository
+        return creatorRepository.save(creator);
     }
 }
