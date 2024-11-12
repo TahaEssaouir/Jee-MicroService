@@ -3,3 +3,8 @@ type Creator {
     name : String,
     email : String
 }
+
+input CreatorRequest{
+    name : String,
+    email : String
+}
